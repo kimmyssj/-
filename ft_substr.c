@@ -28,8 +28,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	return (answer);
 }
 
+/*
 #include <stdio.h>
 int	main(void)
 {
 	printf("%s", ft_substr("abcdefghijklmnop", 15, 8));
 }
+*/
