@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "libft.h"
 
 int	start_checking(const char *haystack, const char *needle, int len_idx)
 {
@@ -19,6 +20,8 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	idx = 0;
 	flag = 0;
+	if (!*needle)
+		return ((char *)haystack);
 	while (idx < len && haystack[idx])
 	{
 		if (haystack[idx] == *needle)
@@ -29,19 +32,3 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	}
 	return (0);
 }
-
-/*
-#include<stdio.h>
-#include<string.h>
-int	main(void)
-{	
-	printf("%s\n", ft_strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 5));
-	printf("%s\n", strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 5));
-	printf("%s\n", ft_strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 100));
-	printf("%s\n", strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 100));
-	printf("%s\n", ft_strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 0));
-	printf("%s\n", strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 0));
-	printf("%s\n", ft_strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 20));
-	printf("%s\n", strnstr("asdqwezxcasdqweasdfghertqwe", "asdqweasdfgh", 20));
-}
-*/

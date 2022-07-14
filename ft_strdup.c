@@ -18,13 +18,3 @@ char	*ft_strdup(const char *s1)
 	}
 	return (result);
 }
-
-/*
-#include <string.h>
-#include <stdio.h>
-int main(void)
-{
-	printf("normal %s\n", strdup("niakqllw"));
-	printf("mine %s\n", ft_strdup("niakqllw"));
-}
-*/

@@ -28,50 +28,8 @@ int	ft_atoi(const char *str)
 	int	result;
 
 	idx = 0;
-	if (!((str[0] >= '0' && str[0] <= '9') || str[0] == '-'
-		|| str[0] == '+' || str[0] == ' '))
-		return (0);
-	while (str[idx] == ' ')
+	while (str[idx] == ' ' || (str[idx] >= 9 && str[idx] <= 13))
 		idx ++;
 	result = result_maker(str, idx);
 	return (result);
 }
-
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int	main(void)
-{
-	printf("%d\n", atoi("0"));
-	printf("%d\n", atoi("1"));
-	printf("%d\n", atoi("-1"));
-	printf("%d\n", atoi("2147483647"));
-	printf("%d\n", atoi("-2147483648"));
-	printf("%d\n", atoi("+2147483647"));
-	printf("%d\n", atoi("        1"));
-	printf("%d\n", atoi("  -1a1"));
-	printf("%d\n", atoi(" 1"));
-	printf("%d\n", atoi(" -1"));
-	printf("%d\n", atoi("a1"));
-	printf("%d\n", atoi("a-1"));
-	printf("%d\n", atoi("+-1"));
-	printf("%d\n", atoi("--1"));
-	printf("%d\n", atoi("2147483648"));
-	printf("\n");
-	printf("%d\n", ft_atoi("0"));
-	printf("%d\n", ft_atoi("1"));
-	printf("%d\n", ft_atoi("-1"));
-	printf("%d\n", ft_atoi("2147483647"));
-	printf("%d\n", ft_atoi("-2147483648"));
-	printf("%d\n", ft_atoi("+2147483647"));
-	printf("%d\n", ft_atoi("        1"));
-	printf("%d\n", ft_atoi("  -1a1"));
-	printf("%d\n", ft_atoi(" 1"));
-	printf("%d\n", ft_atoi(" -1"));
-	printf("%d\n", ft_atoi("a1"));
-	printf("%d\n", ft_atoi("a-1"));
-	printf("%d\n", ft_atoi("+-1"));
-	printf("%d\n", ft_atoi("--1"));
-	printf("%d\n", ft_atoi("2147483648"));
-}
-*/

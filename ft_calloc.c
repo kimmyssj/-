@@ -9,10 +9,10 @@ void	*ft_calloc(size_t count, size_t size)
 	result = (char *)malloc(size * count);
 	if (result == 0)
 		return (0);
-	while (idx < size)
+	while (idx < size * count)
 	{
-		result[idx] = 0;
+		result[idx] = '\0';
 		idx ++;
 	}
-	return ((void *)result);
+	return (result);
 }

@@ -25,6 +25,7 @@ extern size_t ft_strlcpy(char * restrict dst, const char * restrict src, size_t 
 extern int ft_tolower(int c);
 extern void *ft_calloc(size_t count, size_t size);
 extern void *ft_memchr(const void *s, int c, size_t n);
+extern void *ft_memmove(void *dst, const void *src, size_t len);
 extern void ft_putstr_fd(char *s, int fd);
 extern size_t ft_strlen(const char *s);
 extern int ft_toupper(int c);
