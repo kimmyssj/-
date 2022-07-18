@@ -9,6 +9,8 @@ char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	str_len = ft_strlen(s);
 	answer = (char *)malloc(sizeof(char) * (str_len + 1));
+	if (answer == 0)
+		return (0);
 	idx = 0;
 	while (idx < str_len)
 	{
