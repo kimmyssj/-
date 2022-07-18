@@ -1,31 +1,31 @@
 #include <stdlib.h>
 
-void	itoa_maker(long long n, int deci_numb, char *itoa_str)
+void	itoa_maker(long long n, char *itoa_str)
 {
-	int			flag;
-	long long	ten_mul;
+	int			idx;
+	long long	ten_num;
+	long long	flag;
 
-	ten_mul = 1;
-	flag = 0;
-	while (flag < deci_numb)
-	{
-		ten_mul = ten_mul * 10;
-		flag ++;
-	}
-	ten_mul = ten_mul / 10;
-	flag = 0;
+	idx = 0;
+	ten_num = 1000000000;
+	flag = n;
 	if (n < 0)
 	{
-		n = -1 * n;
-		flag = 1;
+		n = n * -1;
+		idx ++;
 	}
-	while (n > 0)
+	while (ten_num)
 	{
-		deci_numb = n / ten_mul;
-		n = n % ten_mul;
-		ten_mul = ten_mul / 10;
-		itoa_str[flag] = deci_numb + 48;
-		flag ++;
+		if (flag / ten_num)
+			break ;
+		ten_num = ten_num / 10;
+	}
+	while (ten_num > 0)
+	{
+		itoa_str[idx] = n / ten_num + '0';
+		n = n % ten_num;
+		ten_num = ten_num / 10;
+		idx ++;
 	}
 }
 
@@ -69,27 +69,6 @@ char	*ft_itoa(int n)
 	itoa_str = itoa_str_maker(n, deci_numb);
 	if (n == 0)
 		return (itoa_str);
-	itoa_maker(n, deci_numb, itoa_str);
+	itoa_maker(n, itoa_str);
 	return (itoa_str);
 }
-
-/*
-#include <stdio.h>
-
-int main(void)
-{
-	int a = 2147483647;
-	int b = -2147483648;
-	int c = 0;
-	int aa = 124124;
-	int ab = -124124;
-	int ac = 200000000;
-	char *d = ft_itoa(a);
-	char *e = ft_itoa(b);
-	char *f = ft_itoa(c);
-	char *g = ft_itoa(aa);
-	char *h = ft_itoa(ab);
-	char *i = ft_itoa(ac);
-	printf("%s  %s   %s\n %s  %s  %s\n", d, e, f, g, h, i); 
-}
-*/

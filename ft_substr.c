@@ -1,15 +1,5 @@
 #include	<stdlib.h>
 
-int	fft_strlen(char *s)
-{
-	int	idx;
-
-	idx = 0;
-	while (s[idx])
-		idx ++;
-	return (idx);
-}
-
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*answer;
@@ -21,17 +11,9 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	while (idx < len)
 	{
-		answer[idx] = s[start + idx - 1];
+		answer[idx] = s[start + idx];
 		idx ++;
 	}
 	answer[idx] = '\0';
 	return (answer);
 }
-
-/*
-#include <stdio.h>
-int	main(void)
-{
-	printf("%s", ft_substr("abcdefghijklmnop", 15, 8));
-}
-*/

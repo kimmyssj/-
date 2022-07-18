@@ -1,6 +1,7 @@
 #ifndef __LIBFT_H__
 # define __LIBFT_H__
 
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char));
 extern int ft_isalpha(int c);
 extern void *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
 extern char *ft_strchr(const char *s, int c);
@@ -33,6 +34,7 @@ extern int ft_isalnum(int c);
 extern int ft_memcmp(const void *s1, const void *s2, size_t n);
 extern char **ft_split(char const *s, char c);
 extern int ft_strncmp(const char *s1, const char *s2, size_t n);
+extern void ft_striteri(char *s, void (*f)(unsigned int, char*));
 
 // end here to define new lib.h file
 #endif
