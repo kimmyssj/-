@@ -66,18 +66,3 @@ void	ft_putnbr_fd(int n, int fd)
 		deci_numb ++;
 	write(fd, nbr_str, deci_numb);
 }
-
-/*
-int main(void)
-{
-	ft_putnbr_fd(-2147483648, 2);
-	write(1, "\n", 1);
-	ft_putnbr_fd(2147483647, 1);
-	write(1, "\n", 1);
-	ft_putnbr_fd(0, 0);
-	write(1, "\n", 1);
-	ft_putnbr_fd(1234, 2);
-	write(1, "\n", 1);
-	ft_putnbr_fd(-1234, 1);
-}
-*/
