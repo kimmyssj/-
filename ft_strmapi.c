@@ -1,6 +1,6 @@
 #include	"libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*answer;
 	unsigned int	str_len;
