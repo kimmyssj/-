@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "libft.h"
 
 void	*memmoving(char *dstcop, char *srccop, size_t len)

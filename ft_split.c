@@ -1,4 +1,3 @@
-#include	<stdlib.h>
 #include	"libft.h"
 
 char	*something_like_strchr(char const *s, char c)

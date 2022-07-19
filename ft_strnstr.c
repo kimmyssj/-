@@ -1,4 +1,3 @@
-#include <stdlib.h>
 #include "libft.h"
 
 int	start_checking(const char *haystack, const char *needle, int len_idx)
