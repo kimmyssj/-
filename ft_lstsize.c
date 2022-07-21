@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:18 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:04:19 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:20:11 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_lstsize(t_list *lst)
 
 	if (lst == 0)
 		return (0);
-	container = lst;
+		container = lst;
 	idx = 1;
 	while (container->next)
 	{

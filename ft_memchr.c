@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:20 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:04:22 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:01:01 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,5 @@ void	*ft_memchr(const void *s, int c, size_t n)
 			return ((void *)str + idx);
 		idx ++;
 	}
-	return (0);
+	return (NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:56 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:04:58 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:15:59 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,7 +106,7 @@ char	**ft_split(char const *s, char c)
 
 	str_num = str_num_check(s, c);
 	answer = (char **)malloc(sizeof(char *) * (str_num + 1));
-	if (answer == NULL && s == NULL)
+	if (answer == NULL)
 		return (NULL);
 	for_free_idx = str_duplicate(s, c, answer);
 	if (for_free_idx)

@@ -6,9 +6,11 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:59 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:05:00 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:15:44 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {

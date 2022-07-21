@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:11 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:04:12 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:00:13 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,14 @@ t_list	*ft_lstlast(t_list *lst)
 {
 	t_list	*tracker;
 
-	if (lst == 0)
-		return (0);
-	if (lst->next == 0)
+	if (lst == NULL)
+		return (NULL);
+	if (lst->next == NULL)
 		return (lst);
 	tracker = lst->next;
-	while (tracker != 0)
+	while (tracker != NULL)
 	{
-		if (tracker->next == 0)
+		if (tracker->next == NULL)
 			return (tracker);
 		else
 			tracker = tracker->next;

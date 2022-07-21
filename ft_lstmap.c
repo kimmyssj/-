@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:13 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/21 01:40:37 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:18:06 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*container;
 	t_list	*answer;
 
+	if (lst == NULL)
+		return (NULL);
 	answer = NULL;
 	while (lst->next != NULL)
 	{

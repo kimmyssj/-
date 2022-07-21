@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:03:59 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 21:36:58 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/21 16:23:00 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	ft_recursive_clear(t_list *lst, void (*del)(void*))
 
 void	ft_lstclear(t_list **lst, void (*del)(void*))
 {
+	if (del == NULL)
+		return ;
 	ft_recursive_clear(*lst, del);
 	*lst = NULL;
 }
