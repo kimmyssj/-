@@ -6,75 +6,51 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:41 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:04:45 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/22 01:44:50 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <unistd.h>
 
-void	nbr_maker(long long n, int deci_numb, char *nbr_str)
+int	conditions_check(int n, int fd)
 {
-	int			flag;
-	long long	ten_mul;
-
-	ten_mul = 1;
-	flag = 0;
-	while (flag < deci_numb)
+	if (n == -2147483648)
 	{
-		ten_mul = ten_mul * 10;
-		flag ++;
+		write(fd, "-2147483648", 11);
+		return (0);
 	}
-	ten_mul = ten_mul / 10;
-	flag = 0;
+	if (n == 0)
+	{
+		write(fd, "0", 1);
+		return (0);
+	}
 	if (n < 0)
 	{
-		n = -1 * n;
-		flag = 1;
+		n = n * -1;
+		write(fd, "-", 1);
+		return (n);
 	}
-	while (n > 0)
-	{
-		deci_numb = n / ten_mul;
-		n = n % ten_mul;
-		ten_mul = ten_mul / 10;
-		nbr_str[flag] = deci_numb + 48;
-		flag ++;
-	}
-}
-
-void	putnbr_str_maker(long long n, int deci_numb, char *nbr_str)
-{
-	if (n < 0)
-	{
-		nbr_str[0] = '-';
-		nbr_str[deci_numb + 1] = '\0';
-	}
-	else if (n > 0)
-		nbr_str[deci_numb] = '\0';
-	else
-	{
-		nbr_str[0] = '0';
-		nbr_str[1] = '\0';
-	}
-}
+	return (n);
+}	
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	long long	container;
-	int			deci_numb;
-	char		nbr_str[12];
+	long long	ten_num;
+	char		for_write;
 
-	container = n;
-	deci_numb = 0;
-	while (container != 0)
+	ten_num = 1000000000;
+	for_write = 0;
+	n = conditions_check(n, fd);
+	if (!n)
+		return ;
+	while (!(n / ten_num))
+		ten_num = ten_num / 10;
+	while (ten_num > 0)
 	{
-		container = container / 10;
-		deci_numb ++;
+		for_write = n / ten_num + '0';
+		write(fd, &for_write, 1);
+		n = n % ten_num;
+		ten_num = ten_num / 10;
 	}
-	putnbr_str_maker(n, deci_numb, nbr_str);
-	if (n == 0)
-		write(fd, "0", 1);
-	nbr_maker(n, deci_numb, nbr_str);
-	if (n < 0)
-		deci_numb ++;
-	write(fd, nbr_str, deci_numb);
 }

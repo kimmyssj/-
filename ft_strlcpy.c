@@ -6,13 +6,13 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:05:20 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/21 16:11:31 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/22 02:08:30 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	size_t	idx;
 	size_t	src_len;

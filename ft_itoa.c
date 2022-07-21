@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:03:51 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:03:52 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/22 02:04:05 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,24 +41,28 @@ void	itoa_maker(long long n, char *itoa_str)
 	}
 }
 
-char	*itoa_str_maker(long long n, int deci_numb)
+char	*itoa_str_maker(long long n, int deci_numb, char *itoa_str)
 {
-	char	*itoa_str;
-
 	if (n < 0)
 	{
 		itoa_str = (char *)malloc(sizeof(char) * deci_numb + 2);
+		if (itoa_str == NULL)
+			return (NULL);
 		itoa_str[0] = '-';
 		itoa_str[deci_numb + 1] = '\0';
 	}
 	else if (n > 0)
 	{
 		itoa_str = (char *)malloc(sizeof(char) * deci_numb + 1);
+		if (itoa_str == NULL)
+			return (NULL);
 		itoa_str[deci_numb] = '\0';
 	}
 	else
 	{
 		itoa_str = (char *)malloc(sizeof(char) * 2);
+		if (itoa_str == NULL)
+			return (NULL);
 		itoa_str[0] = '0';
 		itoa_str[1] = '\0';
 	}
@@ -73,12 +77,15 @@ char	*ft_itoa(int n)
 
 	container = n;
 	deci_numb = 0;
+	itoa_str = NULL;
 	while (container != 0)
 	{
 		container = container / 10;
 		deci_numb ++;
 	}
-	itoa_str = itoa_str_maker(n, deci_numb);
+	itoa_str = itoa_str_maker(n, deci_numb, itoa_str);
+	if (itoa_str == NULL)
+		return (NULL);
 	if (n == 0)
 		return (itoa_str);
 	itoa_maker(n, itoa_str);
