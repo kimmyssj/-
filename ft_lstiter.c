@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:08 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:04:10 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/20 21:38:13 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
+	if (lst == 0)
+		return ;
 	if (lst->next != NULL)
 		ft_lstiter(lst->next, f);
 	f(lst->content);

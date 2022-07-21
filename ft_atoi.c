@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:03:24 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:03:27 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/20 20:16:41 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int	result_maker(const char *str, int idx)
 	}
 	if (flag == 1)
 		result = result * -1;
-	return ((int)result);
+	return (result);
 }
 
 int	ft_atoi(const char *str)

@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:05:44 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:05:45 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/20 12:27:59 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	size_t	idx;
 
 	idx = 0;
+	if (ft_strlen(s) < start)
+	{
+		answer = (char *)malloc(sizeof(char));
+		answer[idx] = '\0';
+		return (answer);
+	}
 	answer = (char *)malloc(len * sizeof(char) + 1);
 	if (answer == NULL)
 		return (NULL);
-	while (idx < len)
+	while (idx < len && s[start + idx])
 	{
 		answer[idx] = s[start + idx];
 		idx ++;

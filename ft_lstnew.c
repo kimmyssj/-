@@ -6,7 +6,7 @@
 /*   By: seungjki <seungjki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/20 02:04:16 by seungjki          #+#    #+#             */
-/*   Updated: 2022/07/20 02:04:17 by seungjki         ###   ########.fr       */
+/*   Updated: 2022/07/20 20:59:38 by seungjki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*answer;
 
-	answer = 0;
 	answer = (void *)malloc(sizeof(void *) * 2);
 	if (!answer)
 		return (0);
